@@ -1,0 +1,409 @@
+/**
+ * Tekrar Kullanılabilir Bileşenler (Premium Components UI Kit)
+ */
+
+/* --- 1. BUTTONS (Premium Butonlar) --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.75rem;
+  font-family: var(--font-family-title);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  z-index: var(--z-normal);
+}
+
+.btn--primary {
+  background-color: var(--color-accent);
+  color: var(--color-primary-dark);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-accent-hover);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
+}
+
+.btn--outline {
+  border: 2px solid var(--color-accent);
+  color: var(--color-accent);
+}
+
+.btn--outline:hover {
+  background-color: var(--color-accent);
+  color: var(--color-primary-dark);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
+}
+
+.btn--dark {
+  background-color: var(--color-primary-light);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-white);
+}
+
+.btn--dark:hover {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+/* --- 2. CARDS (Proje ve Haber Kartları) --- */
+.card {
+  background-color: var(--color-primary-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(197, 168, 128, 0.3);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.card__image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.card:hover .card__image {
+  transform: scale(1.08);
+}
+
+/* Kartın Üzerindeki Gold Etiket (Badge) */
+.card__badge {
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  background-color: var(--color-accent);
+  color: var(--color-primary-dark);
+  font-family: var(--font-family-title);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+.card__content {
+  padding: var(--spacing-lg);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card__title {
+  font-size: var(--fs-lg);
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-white);
+  transition: color var(--transition-fast);
+}
+
+.card:hover .card__title {
+  color: var(--color-accent);
+}
+
+.card__desc {
+  font-size: var(--fs-sm);
+  line-height: var(--lh-base);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-lg);
+}
+
+.card__metadata {
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: var(--spacing-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+}
+
+.card__meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.card__meta-icon {
+  color: var(--color-accent);
+}
+
+/* --- 3. SLIDER / HERO SECTION --- */
+.sl-wrap-under-header {
+  position: relative !important;
+  width: 100% !important;
+  margin-top: 0 !important; 
+  height: 100vh !important; /* Ekranı dikeyde tam kaplar (100% viewport height) */
+  overflow: hidden !important;
+  background: #000;
+}
+
+.sl-wrap-under-header .sl-track {
+  display: flex !important;
+  height: 100% !important; 
+  width: 100% !important;
+  transition: transform 1.2s cubic-bezier(0.2, 1, 0.2, 1) !important;
+}
+
+.sl-wrap-under-header .sl-slide {
+  position: relative !important;
+  min-width: 100% !important;
+  height: 100% !important; 
+  overflow: hidden !important; /* Resim büyütüldüğünde yan slaytlara taşmasını kesin olarak önler */
+}
+
+/* RESİM AYARLARI */
+.sl-wrap-under-header .sl-slide img {
+  width: 100% !important;
+  height: 100% !important; 
+  object-fit: cover !important; /* Resmin oranını bozmadan alanı mükemmelce doldurur */
+  object-position: center !important;
+  transform: scale(1.06) translateY(-2.5%); /* Resmi hafif büyüteret yukarı öteler, üstteki fazla gökyüzü boşluğunu keser */
+  display: block !important;
+}
+
+/* KARARTMA EFEKTİ */
+.sl-wrap-under-header .sl-overlay {
+  position: absolute !important;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 60%) !important;
+  z-index: 1;
+}
+/* İNCELE BUTONU (APPLE-STYLE ULTRA MINIMAL CAPSULE) */
+.sl-btn-incele {
+  position: absolute !important;
+  bottom: 35px; /* Yazıyla çakışmayı tamamen önlemek ve her ekran boyutunda kusursuz pay bırakmak için 40px'den 35px'e çekildi */
+  left: 150px; /* İçerik bloğuna daha sıkı sarılması ve dikey akışın sol ağırlığını korumak için 180px'den 150px'e kaydırıldı */
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px; /* Tam bir Apple hap tasarımı (pill shape) */
+  padding: 10px 32px !important; /* Son derece zarif ve kompakt boyut */
+  font-size: 13px !important; /* Minimalist yazı boyutu */
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 10;
+  text-transform: uppercase;
+  letter-spacing: 3px; /* Asil harf arası boşluğu */
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.sl-btn-incele:hover { 
+  background: #ffffff !important; 
+  color: #000000 !important; 
+  border-color: #ffffff !important;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* OKLARIN KAPSAYICISI (BUTON İLE DİKEYDE BİREBİR HİZALI) */
+.sl-controls {
+  position: absolute !important;
+  bottom: 35px; /* Buton ile dikeyde milimetrik aynı hizada (40px -> 35px) */
+  right: 80px;
+  display: flex;
+  gap: 16px;
+  z-index: 999;
+}
+
+/* YÖN OKLARI (APPLE-STYLE SLEEK CIRCLES) */
+.sl-arrow {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff;
+  width: 48px; height: 48px; /* Kompakt Apple stili dairesel boyut (68px -> 48px) */
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* OKLARIN İÇİNDEKİ İKONLAR (SVG) */
+.sl-arrow svg {
+  width: 18px; /* Zarif ikon boyutu (28px -> 18px) */
+  height: 18px;
+  transition: transform 0.4s ease; 
+}
+
+/* OKLAR HOVER EFEKTİ */
+.sl-arrow:hover { 
+  background: #ffffff !important; 
+  color: #000000 !important; 
+  border-color: #ffffff !important;
+  transform: translateY(-3px); 
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* HOVER OLUNCA İÇERİDEKİ OKLAR GİDECEKLERİ YÖNE HAFİF KAYAR */
+.sl-prev:hover svg { transform: translateX(-4px); }
+.sl-next:hover svg { transform: translateX(4px); }
+
+/* MOBİL (TELEFON) EKRANLARI İÇİN UYUM */
+@media (max-width: 768px) {
+  .sl-wrap-under-header { height: 100vh !important; margin-top: 0 !important; } 
+  .sl-controls { right: 20px; bottom: 30px; gap: 12px; }
+  .sl-arrow { width: 50px; height: 50px; } 
+  .sl-arrow svg { width: 22px; height: 22px; }
+  .sl-btn-incele { bottom: 95px; right: 20px; left: auto !important; padding: 14px 34px; font-size: 14px; }
+}
+
+/* --- 4. FORM AND GLASSMORPHISM (Ön Talep Formu) --- */
+.contact-form {
+  background: rgba(17, 34, 64, 0.45);
+  border: 1px solid rgba(197, 168, 128, 0.15);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.form-group {
+  margin-bottom: var(--spacing-lg);
+  position: relative;
+}
+
+.form-group__label {
+  display: block;
+  font-size: var(--fs-xs);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-xs);
+}
+
+.form-group__input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background-color: rgba(10, 25, 47, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-white);
+  font-size: var(--fs-sm);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-group__input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 8px rgba(197, 168, 128, 0.2);
+}
+
+/* Hata Durumu */
+.form-group--error .form-group__input {
+  border-color: var(--color-error);
+}
+
+.form-group__error-msg {
+  color: var(--color-error);
+  font-size: var(--fs-xs);
+  margin-top: 4px;
+  display: none;
+}
+
+.form-group--error .form-group__error-msg {
+  display: block;
+}
+
+/* KVKK Onay Checkbox'ı */
+.form-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  cursor: pointer;
+  user-select: none;
+  margin-bottom: var(--spacing-lg);
+}
+
+.form-checkbox__input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.form-checkbox__box {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(10, 25, 47, 0.6);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.form-checkbox__input:checked ~ .form-checkbox__box {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent);
+}
+
+.form-checkbox__box::after {
+  content: '';
+  width: 5px;
+  height: 10px;
+  border: solid var(--color-primary-dark);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  display: none;
+}
+
+.form-checkbox__input:checked ~ .form-checkbox__box::after {
+  display: block;
+}
+
+.form-checkbox__text {
+  font-size: var(--fs-xs);
+  color: var(--color-text-secondary);
+  line-height: var(--lh-tight);
+}
+
+.form-checkbox__text a {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (min-width: 768px) {
+  .hero-slide__title {
+    font-size: var(--fs-4xl);
+  }
+  
+  .contact-form {
+    padding: var(--spacing-2xl);
+  }
+}

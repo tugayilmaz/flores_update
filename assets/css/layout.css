@@ -1,0 +1,739 @@
+/**
+ * Izgara, Konteyner ve İskelet Yapısı (Grid, Layout & Structural Layout)
+ */
+
+/* Temel Konteyner */
+.container {
+  width: var(--max-width-fluid);
+  max-width: var(--max-width-container);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
+}
+
+/* Sayfa Bölümleri */
+.section {
+  padding-top: var(--spacing-2xl);
+  padding-bottom: var(--spacing-2xl);
+  position: relative;
+}
+
+.section--dark {
+  background-color: var(--color-primary-dark);
+}
+
+.section--light {
+  background-color: var(--color-primary-light);
+}
+
+/* Esnek Izgara Sistemleri (Flexbox & Grid Layouts) */
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.grid {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+.grid-2 {
+  grid-template-columns: 1fr;
+}
+
+.grid-3 {
+  grid-template-columns: 1fr;
+}
+
+.grid-4 {
+  grid-template-columns: 1fr;
+}
+
+/* --- PREMİUM FLORES GOLD HEADER / NAVİGASYON --- */
+.flores-premium-gold-header {
+  position: absolute; /* Aşağı kaydırınca sayfa ile birlikte yukarı kaysın, sabit kalmasın */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: var(--z-sticky);
+  background: rgba(10, 22, 44, 0.5); /* Barış İnşaat stili şık yarı-saydam cam */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background var(--transition-normal), backdrop-filter var(--transition-normal), border var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.header-inner {
+  max-width: var(--max-width-container);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: height var(--transition-normal);
+}
+
+/* SOL: LOGO ALANI */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.nav-logo .flores-brand-logo-container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  text-decoration: none;
+}
+
+.brand-icon {
+  height: 46px;
+  width: auto;
+  transition: transform var(--transition-normal);
+}
+
+.flores-brand-logo-container:hover .brand-icon {
+  transform: scale(1.08) rotate(3deg);
+}
+
+.brand-title {
+  font-family: var(--font-family-title);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-xl);
+  color: var(--color-white);
+  letter-spacing: 0.12em;
+  line-height: 1;
+}
+
+.logo-divider {
+  width: 1px;
+  height: 32px;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.brand-badge-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  user-select: none;
+}
+
+.badge-num {
+  font-family: var(--font-family-title);
+  font-weight: 300;
+  font-size: 1.8rem;
+  color: var(--color-white);
+  line-height: 1;
+}
+
+.badge-text {
+  font-family: var(--font-family-body);
+  font-size: 0.5rem;
+  letter-spacing: 0.08em;
+  font-weight: var(--fw-medium);
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+/* Mobil için kurumsal badge saklama */
+@media (max-width: 576px) {
+  .logo-divider,
+  .brand-badge-container {
+    display: none !important;
+  }
+}
+
+/* ORTA: MASAÜSTÜ MENÜ ELEMANLARI (FLORES STİLİ VE PREMIUM BARIŞ İNŞAAT MEGA TASARIMI) */
+.nav-center-menu {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .nav-center-menu {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xl);
+    height: 100%;
+  }
+}
+
+.nav-center-menu > a,
+.nav-center-menu .menu-item > a {
+  color: var(--color-white);
+  font-family: var(--font-family-title);
+  font-weight: var(--fw-bold);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  padding: 38px 0; /* Header yüksekliğine göre dikey ortalama */
+  position: relative;
+  transition: color var(--transition-fast);
+  display: inline-block;
+}
+
+.nav-center-menu > a::after,
+.nav-center-menu .menu-item > a::after {
+  content: '';
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: var(--color-accent);
+  transition: width var(--transition-normal);
+}
+
+.nav-center-menu > a:hover,
+.nav-center-menu .menu-item:hover > a {
+  color: var(--color-accent);
+}
+
+.nav-center-menu > a:hover::after,
+.nav-center-menu .menu-item:hover > a::after {
+  width: 100%;
+}
+
+/* MEGA DROPDOWN (BARIŞ İNŞAAT STİLİ - BİREBİR UYARLAMA) */
+.menu-item {
+  position: relative;
+}
+
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(15px);
+  width: 520px;
+  background: rgba(10, 22, 44, 0.95); /* Barış İnşaat asil cam arka planı */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: var(--spacing-lg);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all var(--transition-normal);
+  z-index: var(--z-dropdown);
+}
+
+.menu-item:hover .mega-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Küçük asil yukarı oku */
+.mega-menu::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 10px;
+  height: 10px;
+  background-color: rgba(10, 22, 44, 0.95);
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* MEGA MENÜ İÇERİK GRİDİ */
+.mega-content {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: var(--spacing-lg);
+}
+
+.mega-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.mega-col h4 {
+  font-family: var(--font-family-title);
+  font-size: 0.9rem;
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-sm);
+  letter-spacing: 0.08em;
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+}
+
+.mega-col p {
+  font-size: 0.78rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin-bottom: var(--spacing-md);
+}
+
+.mega-link {
+  font-family: var(--font-family-title);
+  font-size: 0.75rem;
+  font-weight: var(--fw-bold);
+  color: var(--color-white);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color var(--transition-fast);
+}
+
+.mega-link:hover {
+  color: var(--color-accent);
+}
+
+.mega-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mega-col ul li a {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  display: block;
+  padding: 4px 0;
+  font-weight: var(--fw-medium);
+}
+
+.mega-col ul li a:hover {
+  color: var(--color-accent);
+  transform: translateX(4px);
+}
+
+/* SAĞ: HAREKET ALANI VE AKILLI TELEFON */
+.nav-right-action {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.premium-vertical-divider {
+  display: none;
+  width: 1px;
+  height: 32px;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+@media (min-width: 992px) {
+  .premium-vertical-divider {
+    display: block;
+  }
+}
+
+/* AKILLI TELEFON BUTONU (SLIDE OUT PILL EFFECT - PREMİUM GOLD) */
+.premium-circular-phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(212, 175, 55, 0.05); /* Çok hafif gold cam tonu */
+  border: 1.5px solid rgba(212, 175, 55, 0.25); /* İnce gold çerçeve */
+  border-radius: 30px;
+  height: 48px;
+  padding: 0 14px;
+  color: var(--color-accent); /* Satin Gold Yazı ve Simge */
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+.phone-number-slide {
+  max-width: 0;
+  opacity: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: var(--font-family-title);
+  font-weight: var(--fw-bold);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  transition: max-width var(--transition-normal), opacity var(--transition-normal), margin-right var(--transition-normal);
+}
+
+.phone-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.phone-icon-wrapper svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+}
+
+/* Hover'da Telefon Numarası Sola Doğru Açar ve Gold/Pill Yapı Oluşur */
+.premium-circular-phone:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  padding: 0 var(--spacing-lg);
+  box-shadow: var(--shadow-glow);
+  color: var(--color-primary-dark);
+}
+
+.premium-circular-phone:hover .phone-number-slide {
+  max-width: 110px;
+  opacity: 1;
+  margin-right: var(--spacing-sm);
+  color: var(--color-primary-dark) !important;
+}
+
+.premium-circular-phone:hover .phone-icon-wrapper {
+  transform: rotate(15deg);
+  color: var(--color-primary-dark);
+}
+
+/* MOBİL HAMBURGER TETİKLEYİCİ */
+.flores-mob-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: var(--z-modal);
+  padding: 0;
+}
+
+.flores-mob-toggle span {
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-white);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-normal);
+}
+
+/* Mobil Hamburger Aktif Hali */
+.flores-mob-toggle--active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.flores-mob-toggle--active span:nth-child(2) {
+  opacity: 0;
+}
+
+.flores-mob-toggle--active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+@media (min-width: 992px) {
+  .flores-mob-toggle {
+    display: none;
+  }
+}
+
+/* MOBİL YAN ÇEKMECE (DRAWER) */
+.flores-lux-mob-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  max-width: 320px;
+  height: 100vh;
+  background-color: var(--color-primary-dark);
+  box-shadow: -10px 0 35px rgba(0, 0, 0, 0.65);
+  z-index: var(--z-modal);
+  transition: right var(--transition-normal);
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  overflow-y: auto;
+}
+
+.flores-lux-mob-drawer--active {
+  right: 0 !important;
+}
+
+.drawer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: var(--spacing-md);
+}
+
+.drawer-close-btn {
+  font-size: 2rem;
+  color: var(--color-white);
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+  transition: color var(--transition-fast);
+}
+
+.drawer-close-btn:hover {
+  color: var(--color-accent);
+}
+
+.drawer-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.drawer-menu-links a {
+  color: var(--color-white);
+  font-family: var(--font-family-title);
+  font-weight: var(--fw-bold);
+  font-size: 1.05rem;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  padding: var(--spacing-xs) 0;
+}
+
+.drawer-parent {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: var(--spacing-xs) !important;
+}
+
+.drawer-submenu {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  padding-left: var(--spacing-md);
+  margin-top: -5px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.drawer-submenu a {
+  font-size: 0.9rem;
+  font-weight: var(--fw-medium);
+  color: var(--color-text-secondary) !important;
+  text-transform: none;
+}
+
+.mob-gold-btn {
+  margin-top: var(--spacing-md);
+  background-color: var(--color-accent);
+  color: var(--color-primary-dark) !important;
+  text-align: center;
+  padding: var(--spacing-sm) !important;
+  border-radius: var(--radius-sm);
+  font-weight: var(--fw-bold);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Mobil Menü Drawer */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--color-primary-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: var(--z-dropdown);
+  transition: right var(--transition-normal);
+  padding: var(--spacing-2xl);
+}
+
+.mobile-menu--active {
+  right: 0;
+}
+
+.mobile-menu__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.mobile-menu__link {
+  font-family: var(--font-family-title);
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* --- FOOTER BÖLÜMÜ --- */
+.footer {
+  background-color: var(--color-primary-dark);
+  color: var(--color-text-secondary);
+  border-top: 1px solid rgba(197, 168, 128, 0.1);
+  padding-top: var(--spacing-3xl);
+  padding-bottom: var(--spacing-md);
+}
+
+.footer__grid {
+  display: grid;
+  gap: var(--spacing-2xl);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.footer__logo img {
+  height: 55px;
+  width: auto;
+}
+
+.footer__about {
+  font-size: var(--fs-sm);
+  line-height: var(--lh-base);
+}
+
+.footer__title {
+  color: var(--color-white);
+  font-size: var(--fs-md);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-lg);
+  display: inline-block;
+  border-bottom: 2px solid var(--color-accent);
+  padding-bottom: var(--spacing-xs);
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.footer__link {
+  font-size: var(--fs-sm);
+  transition: transform var(--transition-fast);
+}
+
+.footer__link:hover {
+  transform: translateX(5px);
+  color: var(--color-accent);
+}
+
+.footer__info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  font-size: var(--fs-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.footer__info-icon {
+  color: var(--color-accent);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.footer__social-list {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.footer__social-link {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary-light);
+  border: 1px solid rgba(197, 168, 128, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.footer__social-link:hover {
+  background-color: var(--color-accent);
+  color: var(--color-primary-dark);
+  border-color: var(--color-accent);
+  transform: translateY(-3px);
+}
+
+.footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+  text-align: center;
+  font-size: var(--fs-xs);
+}
+
+/* --- EKRAN BOYUTLARINA GÖRE UYARLAMA (Responsive Media Queries) --- */
+@media (min-width: 576px) {
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-top: var(--spacing-3xl);
+    padding-bottom: var(--spacing-3xl);
+  }
+  
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .footer__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .nav {
+    display: block;
+  }
+  
+  .hamburger {
+    display: none;
+  }
+  
+  .mobile-menu {
+    display: none;
+  }
+  
+  .grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .footer__grid {
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  }
+  
+  .footer__bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}

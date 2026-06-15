@@ -1,0 +1,90 @@
+/**
+ * FLORES - CSS Tasarım Sistemi Değişkenleri (Design Tokens)
+ * Bu dosya projedeki tüm renk, tipografi, boşluk, geçiş ve gölge sistemini yönetir.
+ */
+
+:root {
+  /* --- Renk Paleti (Color Palette) --- */
+  /* Premium Kurumsal Tonlar */
+  --color-primary: #0A192F;         /* Premium Lacivert / Koyu Arka Plan */
+  --color-primary-light: #112240;   /* Kart ve Bileşen Arka Planı */
+  --color-primary-dark: #020c1b;    /* En Koyu Ton (Giriş/Footer Altı) */
+  
+  --color-accent: #D4AF37;          /* Altın / Premium Satin Gold Detaylar */
+  --color-accent-hover: #E5C158;    /* Parlak Altın Hover Rengi */
+  --color-accent-light: rgba(212, 175, 55, 0.1); /* Altın Sarısı Şeffaf Ton */
+  
+  /* Nötr Tonlar (Typography & Grays) */
+  --color-text-primary: #F4F1EA;    /* Kemik Beyazı - Ana Gövde Metni */
+  --color-text-secondary: #8892B0;  /* Slate Gri - Yardımcı Açıklamalar */
+  --color-text-muted: #495670;     /* Koyu Gri - Devre Dışı/Muted Metinler */
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  
+  /* Durum Renkleri */
+  --color-success: #64FFDA;         /* Mint Yeşili (Başarılı İşlemler) */
+  --color-error: #FF6B6B;           /* Pastel Kırmızı (Hatalı İşlemler) */
+  
+  /* --- Yazı Tipi Sistemleri (Typography) --- */
+  --font-family-title: 'Outfit', sans-serif;
+  --font-family-body: 'Inter', sans-serif;
+  
+  /* Font Ağırlıkları (Font Weights) */
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  
+  /* Metin Boyutları (Modular Scale) */
+  --fs-xs: 0.75rem;     /* 12px */
+  --fs-sm: 0.875rem;    /* 14px */
+  --fs-base: 1rem;      /* 16px - Ana Gövde */
+  --fs-md: 1.125rem;    /* 18px */
+  --fs-lg: 1.25rem;     /* 20px */
+  --fs-xl: 1.5rem;      /* 24px - Küçük Başlık H3 */
+  --fs-2xl: 2rem;       /* 32px - Alt Başlık H2 */
+  --fs-3xl: 2.5rem;     /* 40px - Büyük Başlık H1 */
+  --fs-4xl: 3.5rem;     /* 56px - Hero Başlığı */
+  
+  /* Satır Yükseklikleri (Line Heights) */
+  --lh-tight: 1.2;
+  --lh-base: 1.6;
+  --lh-relaxed: 1.8;
+
+  /* --- Düzen ve Boşluklar (Spacing & Grid) --- */
+  --spacing-xs: 0.25rem;  /* 4px */
+  --spacing-sm: 0.5rem;   /* 8px */
+  --spacing-md: 1rem;     /* 16px */
+  --spacing-lg: 1.5rem;   /* 24px */
+  --spacing-xl: 2rem;     /* 32px */
+  --spacing-2xl: 3rem;    /* 48px */
+  --spacing-3xl: 5rem;    /* 80px */
+  
+  /* Konteyner Genişlikleri */
+  --max-width-container: 1200px;
+  --max-width-fluid: 100%;
+  
+  /* --- Yumuşatmalar ve Gölgeler (Border & Shadow) --- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+  
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-glow: 0 0 15px rgba(197, 168, 128, 0.3);
+  
+  /* --- Katmanlar (Z-Index) --- */
+  --z-negative: -1;
+  --z-normal: 1;
+  --z-dropdown: 100;
+  --z-sticky: 1000;
+  --z-modal: 10000;
+  
+  /* --- Animasyon ve Geçiş Süreleri (Transitions) --- */
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}

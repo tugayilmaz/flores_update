@@ -1,0 +1,835 @@
+/**
+ * FLORES - Custom Premium Elements Stylesheet
+ * Bu dosya index.html içerisindeki gömülü CSS kodlarının dışa aktarılmasıyla oluşturulmuştur.
+ * Temiz mimari (clean architecture) prensiplerine uygun olarak stilleri ayrıştırır.
+ */
+
+/* ==========================================================================
+   1. CUSTOM HEADER & DRAWER STYLES
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* ELEMENTOR CONTAINER SIFIRLAMALARI (HEADER VE SLIDER GENİŞLİK/HİZALAMA DÜZELTME) */
+header.elementor-location-header {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 0 !important;
+    z-index: 2147483647 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+    filter: none !important;
+    perspective: none !important;
+    overflow: visible !important;
+}
+
+header.elementor-location-header .e-con-boxed,
+header.elementor-location-header .e-con-inner,
+header.elementor-location-header .elementor-widget-html,
+header.elementor-location-header .elementor-widget-container {
+    position: static !important;
+    transform: none !important;
+    filter: none !important;
+    perspective: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+}
+
+.elementor-element-78838ab,
+.elementor-element-fcc6fa0,
+.elementor-element-fcc6fa0 > .elementor-widget-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+    overflow: visible !important;
+}
+
+/* SLIDER'I ARKAYA ALAN DOKUNUŞ */
+.sl-wrap-under-header {
+    margin-top: 0px !important;
+}
+
+/* HEADER BARIŞ İNŞAAT CAM EFEKTİ & BOYUTLARI */
+.flores-premium-gold-header {
+    position: absolute !important; 
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100px; 
+    background: rgba(10, 15, 20, 0.45) !important; /* Barış İnşaat Koyu Şeffaf Cam Arka Planı */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    display: flex;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important; /* İnce Alt Çizgi */
+    z-index: 2147483647 !important; 
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Sayfa Kaydırılınca Koyu Mod */
+.flores-premium-gold-header.scrolled {
+    height: 78px;
+    background: rgba(10, 12, 15, 0.95) !important; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+/* WORDPRESS ADMIN BAR KORUMASI */
+body.admin-bar .flores-premium-gold-header {
+    top: 32px !important;
+}
+body.admin-bar .flores-lux-mob-drawer {
+    top: 32px !important;
+    height: calc(100vh - 32px) !important;
+}
+
+@media screen and (max-width: 782px) {
+    body.admin-bar .flores-premium-gold-header {
+        top: 46px !important;
+    }
+    body.admin-bar .flores-lux-mob-drawer {
+        top: 46px !important;
+        height: calc(100vh - 46px) !important;
+    }
+}
+
+/* İÇ HİZALAYICI KAPSAYICI */
+.header-inner {
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px !important; 
+    height: 100%;
+    box-sizing: border-box !important;
+}
+
+/* SOL SEKTÖR: LOGO */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.flores-brand-logo-container {
+    display: flex;
+    align-items: center;
+    gap: 5px; 
+    text-decoration: none !important;
+    background: transparent !important;
+    border: none !important;
+}
+
+.brand-icon {
+    height: 56px !important; 
+    width: auto !important;
+    object-fit: contain !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.brand-title {
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 25px; 
+    font-weight: 900; 
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    line-height: 1;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.logo-divider {
+    width: 1px;
+    height: 32px;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.brand-badge-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    user-select: none;
+}
+
+.badge-num {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 1.8rem;
+    color: #ffffff;
+    line-height: 1;
+}
+
+.badge-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+/* Sayfa kaydırılınca logo ve yazı küçülmesi */
+.flores-premium-gold-header.scrolled .brand-icon {
+    height: 44px !important;
+}
+.flores-premium-gold-header.scrolled .brand-title {
+    font-size: 20px;
+}
+
+/* ORTA SEKTÖR: MENÜ */
+.nav-center-menu {
+    display: flex;
+    align-items: center;
+    gap: 38px; 
+    height: 100%;
+}
+
+/* SAĞ SEKTÖR: TELEFON */
+.nav-right-action {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 100%;
+}
+
+/* MENÜ LİNK AYARLARI */
+.nav-center-menu > a,
+.nav-center-menu .menu-item > a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 13.5px; 
+    font-weight: 700; 
+    letter-spacing: 1.5px; 
+    text-transform: uppercase;
+    white-space: nowrap;
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+/* Hover Çizgisi */
+.nav-center-menu > a::after,
+.nav-center-menu .menu-item > a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #D4AF37;
+    transition: width 0.3s ease;
+}
+
+.nav-center-menu > a:hover::after,
+.nav-center-menu .menu-item:hover > a::after {
+    width: 100%;
+}
+
+.nav-center-menu > a:hover,
+.nav-center-menu .menu-item:hover > a { 
+    color: #D4AF37; 
+}
+
+/* MEGA DROPDOWN (BARIŞ İNŞAAT STİLİ - BİREBİR UYARLAMA) */
+.menu-item {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(15px);
+    width: 520px;
+    background: rgba(10, 12, 15, 0.98); 
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+    padding: 24px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 999999;
+}
+
+.menu-item:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Küçük asil yukarı oku */
+.mega-menu::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 10px;
+    height: 10px;
+    background-color: rgba(10, 12, 15, 0.98);
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* MEGA MENÜ İÇERİK GRİDİ */
+.mega-content {
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 20px;
+}
+
+.mega-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.mega-col h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: #D4AF37;
+    margin-bottom: 8px;
+    margin-top: 0;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.mega-col p {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.5;
+    margin-bottom: 16px;
+    margin-top: 0;
+}
+
+.mega-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.3s ease;
+}
+
+.mega-link:hover {
+    color: #D4AF37;
+}
+
+.mega-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.mega-col ul li a {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6) !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    display: block !important;
+    padding: 4px 0 !important;
+    font-weight: 500 !important;
+    height: auto !important;
+    letter-spacing: 0.5px !important;
+    text-transform: none !important;
+    text-align: left !important;
+}
+
+.mega-col ul li a:hover {
+    color: #D4AF37 !important;
+    transform: translateX(4px);
+    background: transparent !important;
+    padding-left: 0 !important;
+}
+
+/* PREMIUM DİKEY BÖLÜCÜ ÇİZGİ */
+.premium-vertical-divider {
+    width: 1px;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.2);
+    margin-right: 12px; 
+}
+
+/* AKILLI DAİRESEL TELEFON BUTONU */
+.premium-circular-phone {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+    background: transparent;
+    overflow: hidden;
+    border-radius: 30px;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.phone-icon-wrapper {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: #ffffff;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.phone-icon-wrapper svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.4s ease;
+}
+
+.phone-number-slide {
+    max-width: 0;
+    opacity: 0;
+    white-space: nowrap;
+    font-size: 14.5px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #D4AF37; 
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    padding-right: 0;
+    display: inline-block;
+}
+
+/* Hover olunca kayarak açılması */
+.premium-circular-phone:hover .phone-number-slide {
+    max-width: 110px; 
+    opacity: 1;
+    padding-right: 12px; 
+}
+
+.premium-circular-phone:hover .phone-icon-wrapper {
+    background: #D4AF37;
+    border-color: #D4AF37;
+    color: #000000;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+.premium-circular-phone:hover .phone-icon-wrapper svg {
+    transform: rotate(15deg) scale(1.1);
+}
+
+/* MOBİL TETİKLEYİCİ */
+.flores-mob-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 16px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 20px;
+    z-index: 1000000;
+}
+.flores-mob-toggle span {
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* MOBİL YAN ÇEKMECE */
+.flores-lux-mob-drawer {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    max-width: 320px;
+    height: 100vh;
+    background: rgba(10, 12, 15, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: -10px 0 30px rgba(0,0,0,0.6);
+    z-index: 99999999;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.flores-lux-mob-drawer.active {
+    right: 0;
+}
+.flores-lux-mob-drawer .drawer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding-bottom: 15px;
+}
+.flores-lux-mob-drawer .drawer-close-btn {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 36px;
+    cursor: pointer;
+    line-height: 1;
+}
+.flores-lux-mob-drawer .drawer-menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.flores-lux-mob-drawer .drawer-menu-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.flores-lux-mob-drawer .drawer-submenu {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-left: 15px;
+    border-left: 1px solid rgba(255,255,255,0.1);
+}
+.flores-lux-mob-drawer .drawer-submenu a {
+    font-size: 13.5px;
+    color: rgba(255,255,255,0.6);
+    text-transform: none;
+}
+.flores-lux-mob-drawer .mob-gold-btn {
+    background: #D4AF37 !important;
+    text-align: center;
+    padding: 12px;
+    border-radius: 30px;
+    margin-top: 20px;
+    color: #000000 !important;
+    font-weight: 750;
+}
+
+/* MOBİL VE TABLET UYUMLULUKLARI */
+@media (max-width: 1200px) {
+    .nav-center-menu, .premium-vertical-divider { display: none; }
+    .nav-logo { flex: 1; }
+    .nav-right-action { flex: none; }
+    .flores-mob-toggle { display: flex; }
+    .header-inner { padding: 0 40px !important; }
+    
+    .flores-premium-gold-header {
+        height: 80px;
+        background: rgba(10, 12, 15, 0.85) !important;
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+    }
+    .brand-icon { height: 42px !important; }
+    .brand-title { font-size: 19px; }
+    .logo-divider, .brand-badge-container { display: none !important; }
+}
+
+@media (max-width: 480px) {
+    .header-inner { padding: 0 20px !important; }
+    .premium-circular-phone { display: none; }
+}
+
+
+/* ==========================================================================
+   2. HERO SLIDER STYLES
+   ========================================================================== */
+.sl-wrap-under-header {
+    position: relative !important;
+    width: 100% !important;
+    margin-top: 0 !important; 
+    height: 100vh !important; /* Ekranı dikeyde tam kaplar (100% viewport height) */
+    overflow: hidden !important;
+    background: #000;
+}
+
+.sl-wrap-under-header .sl-track {
+    display: flex !important;
+    height: 100% !important; 
+    width: 100% !important;
+    transition: transform 1.2s cubic-bezier(0.2, 1, 0.2, 1) !important;
+}
+
+.sl-wrap-under-header .sl-slide {
+    position: relative !important;
+    min-width: 100% !important;
+    height: 100% !important; 
+    overflow: hidden !important; /* Resim büyütüldüğünde yan slaytlara taşmasını kesin olarak önler */
+}
+
+/* RESİM AYARLARI */
+.sl-wrap-under-header .sl-slide img {
+    width: 100% !important;
+    height: 100% !important; 
+    object-fit: cover !important; /* Resmin oranını bozmadan alanı mükemmelce doldurur */
+    object-position: center !important;
+    transform: scale(1.06) translateY(-2.5%); /* Resmi hafif büyüteret yukarı öteler, üstteki fazla gökyüzü boşluğunu keser */
+    display: block !important;
+}
+
+/* KARARTMA EFEKTİ */
+.sl-wrap-under-header .sl-overlay {
+    position: absolute !important;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 60%) !important;
+    z-index: 1;
+}
+
+/* İNCELE BUTONU (APPLE-STYLE ULTRA MINIMAL CAPSULE) */
+.sl-btn-incele {
+    position: absolute !important;
+    bottom: 35px; /* Yazıyla çakışmayı tamamen önlemek ve her ekran boyutunda kusursuz pay bırakmak için */
+    left: 150px; /* İçerik bloğuna daha sıkı sarılması ve dikey akışın sol ağırlığını korumak için */
+    background: rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px; /* Tam bir Apple hap tasarımı (pill shape) */
+    padding: 10px 32px !important; /* Son derece zarif ve kompakt boyut */
+    font-size: 13px !important; /* Minimalist yazı boyutu */
+    font-weight: 600;
+    cursor: pointer;
+    z-index: 10;
+    text-transform: uppercase;
+    letter-spacing: 3px; /* Asil harf arası boşluğu */
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.sl-btn-incele:hover { 
+    background: #ffffff !important; 
+    color: #000000 !important; 
+    border-color: #ffffff !important;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* OKLARIN KAPSAYICISI (BUTON İLE DİKEYDE BİREBİR HİZALI) */
+.sl-controls {
+    position: absolute !important;
+    bottom: 35px; /* Buton ile dikeyde milimetrik aynı hizada */
+    right: 80px;
+    display: flex;
+    gap: 16px;
+    z-index: 999;
+}
+
+/* YÖN OKLARI (APPLE-STYLE SLEEK CIRCLES) */
+.sl-arrow {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff;
+    width: 48px; height: 48px; /* Kompakt Apple stili dairesel boyut */
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* OKLARIN İÇİNDEKİ İKONLAR (SVG) */
+.sl-arrow svg {
+    width: 18px; /* Zarif ikon boyutu */
+    height: 18px;
+    transition: transform 0.4s ease; 
+}
+
+/* OKLAR HOVER EFEKTİ */
+.sl-arrow:hover { 
+    background: #ffffff !important; 
+    color: #000000 !important; 
+    border-color: #ffffff !important;
+    transform: translateY(-3px); 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* HOVER OLUNCA İÇERİDEKİ OKLAR GİDECEKLERİ YÖNE HAFİF KAYAR */
+.sl-prev:hover svg { transform: translateX(-4px); }
+.sl-next:hover svg { transform: translateX(4px); }
+
+/* MOBİL (TELEFON) EKRANLARI İÇİN UYUM */
+@media (max-width: 768px) {
+    .sl-wrap-under-header { height: 100vh !important; margin-top: 0 !important; } 
+    .sl-controls { right: 20px; bottom: 30px; gap: 12px; }
+    .sl-arrow { width: 50px; height: 50px; } 
+    .sl-arrow svg { width: 22px; height: 22px; }
+    .sl-btn-incele { bottom: 95px; right: 20px; left: auto !important; padding: 14px 34px; font-size: 14px; }
+}
+
+
+/* ==========================================================================
+   3. TEXT SPLITTING ANIMATION STYLES
+   ========================================================================== */
+.text {
+    font-size: 22px;
+    font-weight: 300;
+    color: #fff;
+    display: inline-block;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    line-height: 1.6;
+    /* Herhangi bir dış gölgeyi veya glitch'i engellemek için */
+    text-shadow: none !important;
+    filter: none !important;
+}
+
+.highlight {
+    display: inline-block;
+    color: #F7CA6A !important; 
+    font-weight: 700 !important;
+}
+
+.char {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    /* Harf bazlı gölgeleri sıfırla */
+    text-shadow: none !important;
+}
+
+.char.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   3. FLOATING REQUEST BUTTON & MODAL
+   ========================================================================== */
+.talep {
+    position: fixed;
+    right: -35px;
+    top: 30%;
+    z-index: 9999;
+    transition: transform 0.3s ease-in-out;
+}
+
+.talep:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 767px) {
+    .talep {
+        right: -45px !important;
+        top: 35% !important;
+        transform: scale(0.8) !important;
+        transform-origin: right center !important;
+    }
+}
+
+.premium-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 15, 20, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.premium-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.premium-modal__content {
+  background: rgba(17, 34, 64, 0.95);
+  border: 1px solid rgba(197, 168, 128, 0.3);
+  border-radius: 12px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 15px rgba(197, 168, 128, 0.15);
+  position: relative;
+  transform: translateY(-50px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  color: #fff;
+}
+
+.premium-modal.active .premium-modal__content {
+  transform: translateY(0);
+}
+
+.premium-modal__close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.premium-modal__close:hover {
+  opacity: 1;
+  color: #c5a880;
+}
+
+.premium-modal__title {
+  font-family: inherit;
+  font-size: 1.5rem;
+  color: #c5a880;
+  margin-bottom: 5px;
+}
+
+.premium-modal__subtitle {
+  font-size: 0.75rem;
+  color: #a8b2d1;
+  margin-bottom: 20px;
+}
+
+/* Page-specific padding to accommodate header on canvas landing pages */
+body.page-id-3699,
+body.page-id-1856,
+body.page-id-3331 {
+    padding-top: 100px !important;
+}

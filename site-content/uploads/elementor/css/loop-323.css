@@ -1,0 +1,69 @@
+.elementor-323 .elementor-element.elementor-element-7de3d81{--display:flex;--justify-content:flex-end;}.elementor-323 .elementor-element.elementor-element-dd7f4d2{--display:flex;--justify-content:space-between;--padding-top:0px;--padding-bottom:0px;--padding-left:0px;--padding-right:0px;}.elementor-323 .elementor-element.elementor-element-8fc913f{--display:flex;--padding-top:0px;--padding-bottom:0px;--padding-left:0px;--padding-right:0px;}.elementor-widget-theme-post-featured-image .widget-image-caption{color:var( --e-global-color-text );font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );line-height:var( --e-global-typography-text-line-height );}.elementor-323 .elementor-element.elementor-element-68440bc img{width:100%;height:400px;object-fit:cover;object-position:center center;border-radius:5px 5px 5px 5px;}.elementor-widget-theme-post-title .elementor-heading-title{font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );line-height:var( --e-global-typography-primary-line-height );color:var( --e-global-color-primary );}.elementor-323 .elementor-element.elementor-element-7db9c25 .elementor-heading-title{font-family:"Inter", Sans-serif;font-size:18px;font-weight:700;line-height:1.3em;color:#303030;}.elementor-323 .elementor-element.elementor-element-7db9c25 .elementor-heading-title a:hover, .elementor-323 .elementor-element.elementor-element-7db9c25 .elementor-heading-title a:focus{color:#989898;}.elementor-323 .elementor-element.elementor-element-7db9c25 .elementor-heading-title a{transition-duration:0.4s;}.elementor-323 .elementor-element.elementor-element-941ab08{--display:flex;--padding-top:0px;--padding-bottom:0px;--padding-left:0px;--padding-right:0px;}.elementor-widget-button .elementor-button{background-color:var( --e-global-color-accent );font-family:var( --e-global-typography-accent-font-family ), Sans-serif;font-weight:var( --e-global-typography-accent-font-weight );line-height:var( --e-global-typography-accent-line-height );}.elementor-323 .elementor-element.elementor-element-f6557d2 .elementor-button{background-color:#61CE7000;font-family:"Inter", Sans-serif;font-size:12px;font-weight:300;fill:#000000;color:#000000;padding:0px 0px 0px 0px;}@media(min-width:768px){.elementor-323 .elementor-element.elementor-element-7de3d81{--width:100%;}}@media(max-width:1024px){.elementor-widget-theme-post-featured-image .widget-image-caption{line-height:var( --e-global-typography-text-line-height );}.elementor-widget-theme-post-title .elementor-heading-title{line-height:var( --e-global-typography-primary-line-height );}.elementor-widget-button .elementor-button{line-height:var( --e-global-typography-accent-line-height );}}@media(max-width:767px){.elementor-widget-theme-post-featured-image .widget-image-caption{line-height:var( --e-global-typography-text-line-height );}.elementor-323 .elementor-element.elementor-element-68440bc img{width:100%;height:200px;}.elementor-widget-theme-post-title .elementor-heading-title{line-height:var( --e-global-typography-primary-line-height );}.elementor-323 .elementor-element.elementor-element-7db9c25 .elementor-heading-title{font-size:15px;}.elementor-widget-button .elementor-button{line-height:var( --e-global-typography-accent-line-height );}}/* Start custom CSS for container, class: .elementor-element-8fc913f *//* --- LÜKS HABER KARTI (LOOP TEMPLATE) --- */
+
+/* 1. Kartın Ana Kutusu (Beyaz, Oval, Gölgeli) */
+.elementor-323 .elementor-element.elementor-element-8fc913f {
+    background: #ffffff !important;
+    border-radius: 24px !important; 
+    overflow: hidden !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04) !important; /* Bebeksi gölge */
+    transition: all 0.6s cubic-bezier(0.2, 1, 0.2, 1) !important;
+    border: 1px solid rgba(0,0,0,0.02) !important;
+    cursor: pointer !important;
+}
+
+/* Karta Hover Olunca (Havaya Kalkar) */
+.elementor-323 .elementor-element.elementor-element-8fc913f:hover {
+    transform: translateY(-12px) !important;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.12) !important; /* Derinleşen lüks gölge */
+}
+
+/* 2. Resim Alanı ve Zoom Efekti */
+.elementor-323 .elementor-element.elementor-element-8fc913f .elementor-widget-image {
+    margin-bottom: 20px !important; /* Resimle yazı arasındaki boşluk */
+}
+
+.elementor-323 .elementor-element.elementor-element-8fc913f img {
+    transition: transform 0.8s cubic-bezier(0.2, 1, 0.2, 1) !important;
+    width: 100% !important;
+    border-radius: 0 !important; /* Resmin kendi ovalini ezip karta uydururuz */
+}
+
+.elementor-323 .elementor-element.elementor-element-8fc913f:hover img {
+    transform: scale(1.06) !important; /* Lüks bir yavaşlıkla içeriden büyür */
+}
+
+/* 3. Yazı Alanlarına Otomatik Ferahlık (Padding) */
+/* Resim Dışındaki Tüm Araçlara (Başlık, Devamını Oku vs.) kenar boşluğu verir */
+.elementor-323 .elementor-element.elementor-element-8fc913f .elementor-widget:not(.elementor-widget-image) {
+    padding-left: 25px !important;
+    padding-right: 25px !important;
+}
+
+/* En alttaki araca (Devamını Oku) alttan da boşluk verir */
+.elementor-323 .elementor-element.elementor-element-8fc913f .elementor-widget:last-child {
+    padding-bottom: 25px !important;
+}
+
+/* 4. Başlık ve Yazıların Lüks Renk Geçişleri */
+.elementor-323 .elementor-element.elementor-element-8fc913f h1, .elementor-323 .elementor-element.elementor-element-8fc913f h2, .elementor-323 .elementor-element.elementor-element-8fc913f h3, .elementor-323 .elementor-element.elementor-element-8fc913f h4, .elementor-323 .elementor-element.elementor-element-8fc913f h5, .elementor-323 .elementor-element.elementor-element-8fc913f h6,
+.elementor-323 .elementor-element.elementor-element-8fc913f .elementor-heading-title {
+    color: #0A303F !important; /* Asil Flores Laciverti */
+    font-weight: 800 !important;
+    letter-spacing: -0.5px !important; /* Tok görünüm */
+    transition: color 0.3s ease !important;
+}
+
+/* Mouse gelince Başlık Sarıya Döner */
+.elementor-323 .elementor-element.elementor-element-8fc913f:hover h1, .elementor-323 .elementor-element.elementor-element-8fc913f:hover h2, .elementor-323 .elementor-element.elementor-element-8fc913f:hover h3, .elementor-323 .elementor-element.elementor-element-8fc913f:hover h4, .elementor-323 .elementor-element.elementor-element-8fc913f:hover h5, .elementor-323 .elementor-element.elementor-element-8fc913f:hover h6,
+.elementor-323 .elementor-element.elementor-element-8fc913f:hover .elementor-heading-title {
+    color: #F7CA6A !important; 
+}
+
+/* Devamını Oku yazısı için hover (Sağa kayma) efekti */
+.elementor-323 .elementor-element.elementor-element-8fc913f .elementor-widget:last-child {
+    transition: all 0.3s ease !important;
+}
+
+.elementor-323 .elementor-element.elementor-element-8fc913f:hover .elementor-widget:last-child {
+    transform: translateX(6px) !important; /* Lüks bir şekilde sağa kayar */
+}/* End custom CSS */

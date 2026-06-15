@@ -1,0 +1,162 @@
+/*
+	Theme Name: Hello Elementor
+	Theme URI: https://elementor.com/hello-theme/?utm_source=wp-themes&utm_campaign=theme-uri&utm_medium=wp-dash
+	Description: Hello Elementor is a lightweight and minimalist WordPress theme that was built specifically to work seamlessly with the Elementor site builder plugin. The theme is free, open-source, and designed for users who want a flexible, easy-to-use, and customizable website. The theme, which is optimized for performance, provides a solid foundation for users to build their own unique designs using the Elementor drag-and-drop site builder. Its simplicity and flexibility make it a great choice for both beginners and experienced Web Creators.
+	Author: Elementor Team
+	Author URI: https://elementor.com/?utm_source=wp-themes&utm_campaign=author-uri&utm_medium=wp-dash
+	Version: 3.4.7
+	Stable tag: 3.4.7
+	Requires at least: 6.0
+	Tested up to: 6.8
+	Requires PHP: 7.4
+	License: GNU General Public License v3 or later.
+	License URI: https://www.gnu.org/licenses/gpl-3.0.html
+	Text Domain: hello-elementor
+	Tags: accessibility-ready, flexible-header, custom-colors, custom-menu, custom-logo, featured-images, rtl-language-support, threaded-comments, translation-ready,
+*/
+
+/* ==========================================================================
+   Premium Transparent Header Overlay (RAMS Global Style)
+   ========================================================================== */
+
+/* Main Header Container - Absolute Positioning and Transparency */
+header.elementor-60 {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 9999 !important;
+    background-color: transparent !important;
+    background: transparent !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+/* Header Container Inner Overrides */
+header.elementor-60 .elementor-element-8365e69 {
+    background-color: transparent !important;
+    background: transparent !important;
+    padding: 15px 40px !important;
+}
+
+/* Ensure the main page content has no top margin/padding so slider is under the header */
+#content.site-main {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+.elementor-10 .elementor-element-78838ab {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Logo Styling - Elegant resizing and drop shadow */
+header.elementor-60 .elementor-element-d781881 img {
+    max-height: 70px !important;
+    width: auto !important;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15)) !important;
+}
+
+header.elementor-60 .elementor-element-d781881 img:hover {
+    transform: scale(1.05) !important;
+}
+
+/* Menu Popup Trigger Button Transition (Desktop & Mobile) */
+header.elementor-60 .elementor-element-fdbe9b2,
+header.elementor-60 .elementor-element-21fa902 {
+    transition: all 0.3s ease !important;
+}
+
+/* Menu Text and Link Styling - Modern white and clean spacing */
+header.elementor-60 .elementor-element-fdbe9b2 a,
+header.elementor-60 .elementor-element-21fa902 a {
+    color: #ffffff !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+/* Menu Icon (SVG) Styling */
+header.elementor-60 .elementor-element-fdbe9b2 svg path,
+header.elementor-60 .elementor-element-21fa902 svg path {
+    fill: #ffffff !important;
+    transition: fill 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+/* Hover States for Menu Trigger */
+header.elementor-60 .elementor-element-fdbe9b2 a:hover,
+header.elementor-60 .elementor-element-21fa902 a:hover {
+    color: #12B2AA !important; /* Elegant cyan highlight matching your primary color */
+    transform: translateY(-1px) !important;
+}
+
+header.elementor-60 .elementor-element-fdbe9b2 a:hover svg path,
+header.elementor-60 .elementor-element-21fa902 a:hover svg path {
+    fill: #12B2AA !important;
+}
+
+/* Premium Pill Shape for Destek Hattı / Call Button (RAMS style) */
+header.elementor-60 .elementor-element-a6ae701 h2 {
+    font-family: "Inter", sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: #ffffff !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.8) !important;
+    border-radius: 30px !important;
+    padding: 10px 24px !important;
+    background: transparent !important;
+    letter-spacing: 1px !important;
+    display: inline-block !important;
+    text-align: center !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05) !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+/* Destek Hattı Hover Animations - White solid fill and dark text */
+header.elementor-60 .elementor-element-a6ae701 h2:hover {
+    background-color: #ffffff !important;
+    color: #1a1a1a !important;
+    border-color: #ffffff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.25) !important;
+}
+
+/* Destek Hattı Icon Box Styles */
+header.elementor-60 .elementor-element-0f0f8c6 a,
+header.elementor-60 .elementor-element-74b59c3 a {
+    color: #ffffff !important;
+    transition: all 0.3s ease !important;
+}
+
+header.elementor-60 .elementor-element-0f0f8c6 a:hover,
+header.elementor-60 .elementor-element-74b59c3 a:hover {
+    color: #12B2AA !important;
+}
+
+header.elementor-60 .elementor-element-0f0f8c6 svg path,
+header.elementor-60 .elementor-element-74b59c3 svg path {
+    stroke: #ffffff !important;
+    transition: stroke 0.3s ease !important;
+}
+
+header.elementor-60 .elementor-element-0f0f8c6 a:hover svg path,
+header.elementor-60 .elementor-element-74b59c3 a:hover svg path {
+    stroke: #12B2AA !important;
+}
+
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 1024px) {
+    header.elementor-60 .elementor-element-8365e69 {
+        padding: 10px 20px !important;
+    }
+    header.elementor-60 .elementor-element-d781881 img {
+        max-height: 55px !important;
+    }
+}
